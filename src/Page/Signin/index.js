@@ -1,0 +1,142 @@
+import {
+  Box,
+  Button,
+  Checkbox,
+  Container,
+  FormControlLabel,
+  Grid,
+  IconButton,
+  InputAdornment,
+  TextField,
+  Typography,
+} from "@mui/material";
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { Visibility, VisibilityOff } from "@mui/icons-material";
+
+function Login() {
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
+  const [showPassword, setShowPassword] = useState(false);
+
+  const handleSubmit = () => {
+    console.log("handle the on submit function");
+  };
+
+  const handleUsername = (e) => {
+    setUsername(e.target.value);
+  };
+  const handlePassword = (e) => {
+    setPassword(e.target.value);
+  };
+
+  const handleTogglePasswordVisibility = () => {
+    setShowPassword(!showPassword);
+  };
+
+  return (
+    <Container component="main" maxWidth="xs">
+      <Box
+        sx={{
+          marginTop: 10,
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
+          width: "330px",
+        }}
+      >
+        <Typography component="h1" variant="h5">
+          Sign in
+        </Typography>
+        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+          <TextField
+            margin="normal"
+            fullWidth
+            id="username"
+            label="User Name"
+            name="username"
+            type="text"
+            value={username}
+            onChange={handleUsername}
+          />
+          <TextField
+            margin="normal"
+            id="password"
+            label="Password"
+            fullWidth
+            name="password"
+            type={showPassword ? "text" : "password"}
+            value={password}
+            onChange={handlePassword}
+            InputProps={{
+              endAdornment: (
+                <InputAdornment
+                  position="end"
+                  onClick={handleTogglePasswordVisibility}
+                  edge="end"
+                  sx={{ cursor: "pointer" }}
+                >
+                  {showPassword ? <Visibility /> : <VisibilityOff />}
+                </InputAdornment>
+              ),
+            }}
+          />
+          <FormControlLabel
+            control={
+              <Checkbox
+                sx={{ color: "#9a9a9b" }}
+                value="remember"
+                color="primary"
+              />
+            }
+            label={
+              <Typography
+                variant="body2"
+                sx={{ fontSize: "14px", color: "#9a9a9b" }}
+              >
+                Remember me
+              </Typography>
+            }
+          />
+          <Button fullWidth variant="contained" sx={{ mt: 3, mb: 2 }}>
+            Sign In
+          </Button>
+          <Grid container>
+            <Grid item xs>
+              <Link
+                to="/forgot-password"
+                variant="body2"
+                style={{ textDecoration: "none" }}
+              >
+                Forgot password?
+              </Link>
+            </Grid>
+            <Grid item xs>
+              <Link
+                to="/signup"
+                variant="body2"
+                style={{ textDecoration: "none" }}
+              >
+                {"Don't have an account? Sign Up"}
+              </Link>
+            </Grid>
+            <Grid
+              item
+              xs={24}
+              sx={{
+                marginTop: 2,
+                display: "flex",
+                alignItems: "center",
+                flexDirection: "column",
+              }}
+            >
+              Sign up with
+            </Grid>
+          </Grid>
+        </Box>
+      </Box>
+    </Container>
+  );
+}
+
+export default Login;
