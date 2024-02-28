@@ -1,0 +1,16 @@
+.SignUpIcon {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: center;
+}
+
+.full-screen-container {
+  background-image: url("../../Assets/eaglelogo.jpg");
+  background-size: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: top left;
+}

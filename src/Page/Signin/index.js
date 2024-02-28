@@ -1,3 +1,4 @@
+import { Visibility, VisibilityOff } from "@mui/icons-material";
 import {
   Box,
   Button,
@@ -5,14 +6,16 @@ import {
   Container,
   FormControlLabel,
   Grid,
-  IconButton,
   InputAdornment,
+  Stack,
   TextField,
   Typography,
 } from "@mui/material";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { Visibility, VisibilityOff } from "@mui/icons-material";
+import "../Signin/Signin.css";
+import Logo from "../../Assets/eaglelogo.jpg";
+import BackgroundVideo from "../../Assets/video/background_eagle.mp4";
 
 function Login() {
   const [username, setUsername] = useState("");
@@ -35,7 +38,7 @@ function Login() {
   };
 
   return (
-    <Container component="main" maxWidth="xs">
+    <Stack className="full-screen-container">
       <Box
         sx={{
           marginTop: 10,
@@ -111,31 +114,43 @@ function Login() {
                 Forgot password?
               </Link>
             </Grid>
-            <Grid item xs>
+            <Grid
+              item
+              xs
+              sx={{
+                display: "flex",
+                alignItems: "end",
+                flexDirection: "column",
+              }}
+            >
               <Link
                 to="/signup"
                 variant="body2"
                 style={{ textDecoration: "none" }}
               >
-                {"Don't have an account? Sign Up"}
+                {"Register"}
               </Link>
             </Grid>
             <Grid
-              item
-              xs={24}
+              container
               sx={{
-                marginTop: 2,
-                display: "flex",
-                alignItems: "center",
-                flexDirection: "column",
+                marginTop: 6,
               }}
             >
-              Sign up with
+              <Grid className="SignUpIcon" item xs>
+                <i className="fa-brands fa-google fa-xl"></i>
+              </Grid>
+              <Grid className="SignUpIcon" item xs>
+                <i className="fa-brands fa-facebook fa-xl"></i>
+              </Grid>
+              <Grid className="SignUpIcon" item xs>
+                <i className="fa-brands fa-twitter fa-xl"></i>
+              </Grid>
             </Grid>
           </Grid>
         </Box>
       </Box>
-    </Container>
+    </Stack>
   );
 }
 
