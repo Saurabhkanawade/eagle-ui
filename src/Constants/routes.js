@@ -1,6 +1,8 @@
 import { Navigate } from "react-router-dom";
 import Home from "./../Page/Home/index";
 import Signin from "../Page/Signin/index";
+import ResetPass from "../Page/Reset_Pass";
+import Signup from "./../Page/Signup/index";
 
 const ROUTES = [
   {
@@ -19,16 +21,16 @@ const ROUTES = [
     key: "Login",
     element: <Signin />,
   },
-  // {
-  //   path: "/",
-  //   key: "Login",
-  //   element: <Login />,
-  // },
-  // {
-  //   path: "/login",
-  //   key: "Login",
-  //   element: <Login />,
-  // },
+  {
+    path: "/forgot-password",
+    key: "ForgotPassword",
+    element: <ResetPass />,
+  },
+  {
+    path: "/signup",
+    key: "Register",
+    element: <Signup />,
+  },
 ];
 
 export default ROUTES;
