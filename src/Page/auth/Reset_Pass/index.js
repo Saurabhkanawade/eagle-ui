@@ -55,7 +55,7 @@ function ResetPass() {
   const handleChange = (event, newValue) => {
     setValue(newValue);
   };
-  const handleSubmit = () => {};
+  // const handleSubmit = () => {};
 
   const renderTabContent = () => {
     switch (value) {
