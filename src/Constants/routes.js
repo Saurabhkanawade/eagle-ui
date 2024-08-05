@@ -1,8 +1,9 @@
 import { Navigate } from "react-router-dom";
 import Home from "./../Page/Home/index";
-import Signin from "../Page/Signin/index";
-import ResetPass from "../Page/Reset_Pass";
-import Signup from "./../Page/Signup/index";
+import Signin from "./../Page/auth/Signin/index";
+import ResetPass from "./../Page/auth/Reset_Pass/index";
+import Signup from "./../Page/auth/Signup/index";
+import PageNotFound from './../Page/auth/404/index';
 
 const ROUTES = [
   {
@@ -31,6 +32,11 @@ const ROUTES = [
     key: "Register",
     element: <Signup />,
   },
+  {
+    path: "*",
+    key: "NotFound",
+    element: <PageNotFound />,
+  }
 ];
 
 export default ROUTES;
