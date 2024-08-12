@@ -1,12 +1,8 @@
-import {
-  Typography,
-} from "@mui/material";
+import { Typography } from "@mui/material";
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Signin.css";
-import loginImg from "../../../assets/logos/logo192.png"
-
-
+import loginImg from "../../../assets/logos/logo192.png";
 
 const primaryUrl = "https://saurabhkanawade.github.io/My-Portpolio";
 
@@ -38,12 +34,15 @@ function Copyright(props) {
   );
 }
 
- function Login() {
+function Login() {
   return (
     <>
-      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-11 lg:px-8">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <img
+            style={{
+              filter: `brightness(0) saturate(100%) invert(29%) sepia(55%) saturate(1425%) hue-rotate(180deg) brightness(94%) contrast(94%)`,
+            }}  
             alt="Your Company"
             src={loginImg}
             className="mx-auto h-12 w-12 "
@@ -56,7 +55,10 @@ function Copyright(props) {
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form action="#" method="POST" className="space-y-6">
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Email address
               </label>
               <div className="mt-2">
@@ -73,11 +75,17 @@ function Copyright(props) {
 
             <div>
               <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                <label
+                  htmlFor="password"
+                  className="block text-sm font-medium leading-6 text-gray-900"
+                >
                   Password
                 </label>
                 <div className="text-sm">
-                  <Link to="/login" className="font-semibold text-indigo-600 hover:text-indigo-500">
+                  <Link
+                    to="/login"
+                    className="font-semibold text-indigo-600 hover:text-indigo-500"
+                  >
                     Forgot password?
                   </Link>
                 </div>
@@ -105,20 +113,22 @@ function Copyright(props) {
           </form>
 
           <p className="mt-10 text-center text-sm text-gray-500">
-            Not a member?{' '}
-            <Link to="/login" className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+            Not a member?{" "}
+            <Link
+              to="/login"
+              className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500"
+            >
               Start a 14 day free trial
             </Link>
           </p>
 
-          <p className="mt-10 text-sm text-gray-500 opacity-50">
-           <Copyright/>
+          <p className="mt-10 text-sm text-gray-500 opacity-30">
+            <Copyright />
           </p>
-
         </div>
       </div>
     </>
-  )
+  );
 }
 
 export default Login;
