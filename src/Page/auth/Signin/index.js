@@ -4,7 +4,7 @@ import {
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Signin.css";
-import loginImg from "../../../assets/logos/login-logo.png"
+import loginImg from "../../../assets/logos/logo192.png"
 
 
 
@@ -46,7 +46,7 @@ function Copyright(props) {
           <img
             alt="Your Company"
             src={loginImg}
-            className="mx-auto h-10 w-auto"
+            className="mx-auto h-12 w-12 "
           />
           <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
             Sign in to your account
